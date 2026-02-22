@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* In Tailwind v4, you can define custom variables in the @theme block */
+@theme {
+  --color-brand-dark: #171614;
+  --color-brand-purple: #222225;
+}
+
+body {
+  /* For a solid color */
+  background-color: var(--color-brand-dark);
+
+  /* FOR A GRADIENT: This creates a subtle top-to-bottom fade */
+  background-image: linear-gradient(to bottom, #171614, #222225);
+  
+  /* Make sure the background stays fixed if the content is long */
+  background-attachment: fixed;
+  color: white;
+}
