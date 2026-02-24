@@ -11,7 +11,7 @@ const DownloadIcon = () => (
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden py-10 lg:py-0 bg-[#222225] text-white">
+    <section className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden py-10 lg:py-0 text-white">
       <div className="container px-4 md:px-12 lg:px-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           
@@ -22,18 +22,23 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex items-center justify-center lg:justify-end relative"
           >
-            <div className="relative aspect-square w-full max-w-[400px] lg:max-w-[500px]">
-               <div className="rounded-full overflow-hidden bg-[#222225] aspect-square w-full h-full relative z-10">
-                  <ImageWithFallback
-                    src="/potrait.jpg" 
-                    alt="Tran An Brandl"
-                    className="object-cover w-full h-full"
-                  />
-               </div>
-               
-               {/* Background Glow/Blur Effect matching design */}
-               <div className="absolute top-1/2 left-1/2 -z-0 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-[100px]" />
+          <div className="relative aspect-square w-full max-w-[400px] lg:max-w-[500px] flex items-center justify-center">
+            
+            {/* 1. The Glass Border Wrapper */}
+            <div className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-tr from-[#ADB9FF]/40 via-white/10 to-transparent">
+              {/* 2. The Inner Container (Matches Background) */}
+              <div className="rounded-full overflow-hidden bg-[#222225] w-full h-full relative z-10">
+                <ImageWithFallback
+                  src="/potrait.jpg" 
+                  alt="Tran An Brandl"
+                  className="object-cover w-full h-full"
+                />
+              </div>
             </div>
+
+            {/* 3. The Glow behind the border */}
+            <div className="absolute top-1/2 left-1/2 z-0 h-[110%] w-[110%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ADB9FF]/10 blur-2xl" />
+          </div>
           </motion.div>
 
           {/* NOW SECOND: The Text Block */}
@@ -47,7 +52,7 @@ export function Hero() {
               <h2 
                 className="text-4xl font-['MADE_Soulmaze','Arial_Black',sans-serif] tracking-tight sm:text-5xl uppercase mb-2"
                 style={{ 
-                  WebkitTextStroke: "1px #ADB9FF", 
+                  WebkitTextStroke: "0.5px #ffffff", 
                   color: "transparent" 
                 }}
               >

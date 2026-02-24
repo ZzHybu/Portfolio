@@ -41,7 +41,7 @@ export function Footer() {
           </a>
         </div>
         <p className="text-sm text-slate-500 font-['Montserrat']">
-          © {new Date().getFullYear()} Alex Dev. All rights reserved. Built with React & Tailwind.
+          © {new Date().getFullYear()} Tran An Brandl. All rights reserved. Built with React & Tailwind.
         </p>
       </div>
     </footer>
