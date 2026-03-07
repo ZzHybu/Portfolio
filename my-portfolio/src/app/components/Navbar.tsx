@@ -49,11 +49,17 @@ export function Navbar() {
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#adb9ff]/50 to-transparent" />
 
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 cursor-pointer">
+        
+        {/* 👇 Changed from <Link> to <a> and added onClick with handleScroll pointing to /#hero */}
+        <a 
+          href="/#hero" 
+          onClick={(e) => handleScroll(e, "/#hero")}
+          className="flex items-center gap-2 cursor-pointer"
+        >
            <div className="h-10 w-auto">
             <img src="/logo.png" alt="TranAnDZN Logo" className="h-full w-auto object-contain" />
            </div>
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
