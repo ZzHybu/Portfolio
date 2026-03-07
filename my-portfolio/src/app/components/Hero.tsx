@@ -11,7 +11,8 @@ const DownloadIcon = () => (
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden py-10 lg:py-0 text-white">
+    // 👇 Changed min-h-[calc(100vh-5rem)] to min-h-[80vh] right here
+   <section id="hero" className="relative flex min-h-[80vh] items-center justify-center overflow-hidden py-10 lg:py-0 text-white">
       <div className="container px-4 md:px-12 lg:px-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           
@@ -64,7 +65,7 @@ export function Hero() {
               </h1>
               
               <p className="max-w-[500px] text-lg text-slate-300 font-['Montserrat'] leading-relaxed mt-6">
-                A Graphic Designer and Media & Computing student at HTW Berlin, passionate about creating intuitive, dynamic, and beautiful digital experiences.
+                An International Media and Computing student at HTW Berlin and a passionate graphic designer. I combine structured computer science skills with my own creative touch to build dynamic and engaging digital experiences.
               </p>
             </div>
 

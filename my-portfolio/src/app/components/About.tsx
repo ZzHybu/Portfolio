@@ -28,29 +28,32 @@ export function About() {
             transition={{ duration: 0.5 }}
             className="flex-1 space-y-6"
           >
-            <h2 className="text-3xl tracking-tighter sm:text-4xl font-['MADE_Soulmaze','Arial_Black',sans-serif] uppercase">About Me</h2>
+            <h2 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl font-['MADE_Soulmaze','Arial_Black',sans-serif] uppercase">About Me</h2>
             <p className="text-slate-300 leading-relaxed font-['Montserrat']">
-              I'm a Graphic Designer and currently a student at HTW (Hochschule für Technik und Wirtschaft) majoring in Media and Computing. My journey combines creative design with technical expertise.
+              There's no day without a to-do list for me. I am currently studying International Media and Computing at HTW Berlin , building on a strong foundation from OSZ Max-Bill-Schule, a school known for its focus on media and design. As a computer science student, I am structured, creative, and passionate about leading teams in group projects. I enjoy teamwork because I believe great goals can only be achieved together.
             </p>
             <p className="text-slate-300 leading-relaxed font-['Montserrat']">
-              I specialize in graphic design, digital art, and web development, exploring the intersection of media and technology. I believe in creating visual experiences that tell a story.
+              My journey blends technical logic with creative design. I like to express myself in many ways and bring my own creative touch to every project I'm involved in. I have created the banner and profile picture for the popular YouTube streamer Trymacs , won a Valorant design challenge , and collaborated on an interactive Java text adventure game for a university project.
+            </p>
+             <p className="text-slate-300 leading-relaxed font-['Montserrat']">
+              Beyond my studies, I am proud to be a Course Leader for Tech4Girls, where I teach young children the basics of computer science with the goal of reducing the gender gap in tech. I always welcome challenges as opportunities to grow and improve my skills.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4 text-sm font-medium font-['Montserrat']">
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#5367df]" />
-                <span>Problem Solver</span>
+                <span>Creative Thinker</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#5367df]" />
-                <span>Detail Oriented</span>
+                <span>Highly Structured</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#5367df]" />
-                <span>Continuous Learner</span>
+                <span>Challenge Driven</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#5367df]" />
-                <span>Team Player</span>
+                <span>Team-Oriented</span>
               </div>
             </div>
           </motion.div>
