@@ -11,7 +11,7 @@ const skills = [
   {
     category: "Media & Interactive",
     icon: MonitorPlay,
-    items: ["Unity", "Scratch", "Vegas Pro", "CapCut", "Animation"],
+    items: ["Unity", "Maya", "Blender", "Cinema 4D", "3D Modeling", "Vegas Pro", "CapCut", "Animation"],
   },
   {
     category: "Web Development",

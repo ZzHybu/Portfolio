@@ -15,7 +15,7 @@ export function About() {
           >
             <div className="relative aspect-video overflow-hidden rounded-xl shadow-xl lg:aspect-square border border-[#ADB9FF]/20">
                <ImageWithFallback
-                src="https://images.unsplash.com/photo-1770159116807-9b2a7bb82294?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wZXIlMjB3b3Jrc3BhY2UlMjBtaW5pbWFsfGVufDF8fHx8MTc3MTUzNjA0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="me.jpg"
                 alt="Workspace"
                 className="h-full w-full object-cover"
               />
