@@ -1,38 +1,67 @@
+import { useEffect } from "react";
 import { useParams, Link } from "react-router";
 import { ArrowLeft, ExternalLink, Github, Calendar, User } from "lucide-react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const projects = [
-  {
-    id: "Environment design in Unity",
-    title: "Environment design in Unity",
-    description: "Work in Progress...",
-    content: "...",
+  /*{
+    id: "AimRPG - Game Design and Development",
+    title: "AimRPG - Skill-Based Aim-RPG",
+    
+    description: "A skill-based RPG developed in Unity (C#) that blends classic character progression with FPS aim-trainer mechanics in a turn-based combat system.",
+    
+    content: "Developed in Unity (C#), 'AimRPG' features a unique combat system that combines classic character progression with the core mechanics of FPS aim trainers. Instead of relying on traditional menu commands, players must prove their reflexes and precision in disciplines like GridShot, Tracking, and FlickShots to defeat ghosts and dodge incoming attacks. The combat is heavily skill-driven: damage output is directly influenced by the player's aim performance, while a strategic type system makes certain aim styles more effective against specific ghost types (Shadow, Flame, Ecto). During dynamic defense phases, players must hit 'protection zone' targets; the damage they take scales based on how many targets they miss. On the technical side, I engineered a dynamic target spawn system with strict collision and boundary checks, implemented a modular battle manager for seamless phase transitions, and created a flexible damage formula that perfectly balances raw player skill with traditional RPG stats.",
+    
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1080&auto=format&fit=crop", 
-    tags: ["Unity", "Environment Design", "3D Art", "Game Development","Shader"],
+    
+    tags: ["Unity", "C#", "Game Design", "Gameplay Programming", "RPG"],
     link: "",
     github: "",
-    date: "...",
+    date: "Ongoing",
+    role: "Game Designer & Developer",
+    gallery: []
+  },*/
+  
+  {
+    id: "Environment design in Unity",
+    title: "Environment Design in Unity",
+    
+    description: "A work-in-progress Unity environment focused on mastering technical art and custom visual effects using Shader Graph.",
+    
+    content: "This project serves as one of my first major deep dives into Unity, specifically focusing on the intersection of 3D environment design and technical art. As an ongoing learning experience, I am actively following advanced technical tutorials to master Unity's Shader Graph. So far, I have successfully built custom node-based materials from scratch, including a dynamic grass shader and a stylized water shader. This hands-on approach is allowing me to understand the logic behind real-time rendering and visual effects, helping me create more immersive, dynamic 3D environments.",
+    
+    image: "/games/shader.png", 
+    
+    tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
+    link: "",
+    github: "",
+    date: "Ongoing",
     role: "Environment Designer",
     gallery: [
-
+      "/games/gif1_shader.gif",
+      "/games/gif2_shader.gif",
     ]
   },
 
-    {
-    id: "AimRPG - Game Design and Development",
-    title: "AimRPG - Game Design and Development",
-    description: "Work in Progress...",
-    content: "...",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1080&auto=format&fit=crop", 
-    tags: ["Unity", "2D Art", "Game Development"],
+  {
+    id: "OpenGL",
+    title: "OpenGL",
+    
+    description: "A work-in-progress OpenGL project focused on mastering graphics programming and custom visual effects.",
+    
+    content: "This project serves as one of my first major deep dives into Unity, specifically focusing on the intersection of 3D environment design and technical art. As an ongoing learning experience, I am actively following advanced technical tutorials to master Unity's Shader Graph. So far, I have successfully built custom node-based materials from scratch, including a dynamic grass shader and a stylized water shader. This hands-on approach is allowing me to understand the logic behind real-time rendering and visual effects, helping me create more immersive, dynamic 3D environments.",
+    
+    image: "/games/shader.png", 
+    
+    tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
     link: "",
     github: "",
-    date: "...",
-    role: "Game Designer",
+    date: "Ongoing",
+    role: "Environment Designer",
     gallery: [
-
+      "/games/gif1_shader.gif",
+      "/games/gif2_shader.gif",
     ]
   },
 
@@ -56,47 +85,59 @@ const projects = [
 
   {
     id: "Scratch Game - Egg Cooker",
-    title: "Scratch Game - Egg Cooker",
-    description: "...",
-    content: "...",
+    title: "Egg Cooker - Scratch Showcase Demo",
+    
+    // 👇 Updated hook emphasizing the motivational/showcase aspect
+    description: "A competitive, 2-player Scratch game inspired by Overcooked, developed as an inspiring showcase demo to motivate kids at a summer coding camp.",
+    
+    // 👇 Updated case study explaining it was a benchmark for the students' goals
+    content: "Developed in collaboration with Jasmin Bindemann and other colleagues, 'Egg Cooker' is a fast-paced, 2-player cooking game inspired by the chaotic fun of Overcooked. Players compete head-to-head in a bustling egg restaurant, racing against the clock to serve customers and rack up the most points. This project was specifically created as a motivational showcase for a children's summer coding camp. Rather than being a step-by-step tutorial, the game served as an inspiring benchmark of what the students could achieve by the end of the program. It successfully sparked their excitement for computer science by showing them the complex, highly interactive mechanics they could build themselves using visual scripting.",
+    
     image: "/EggCooker/Egg_Cooker.png",
-    tags: ["Sketch", "Game Design", "UI/UX", "Drawing"],
+    
+    // 👇 Swapped "Educational" for "Game Mechanics" to focus on your design skills
+    tags: ["Scratch", "Game Design", "Visual Scripting", "Game Mechanics"],
     link: "https://scratch.mit.edu/projects/1209316655/",
     github: "",
     date: "August 2025",
     role: "Programmer & Game Designer",
-    gallery: [] 
+    gallery: []
   },
 
   {
     id: "TeamTry (TryReact) - Banner and profile picture design",
-    title: "TeamTry (TryReact) - Banner and profile picture design",
-    description: "...",
-    content: "...",
+    title: "TeamTry (TryReact) Branding",
+    
+    // 👇 Updated hook to highlight the organic adoption
+    description: "What began as a proactive passion project was officially adopted as the channel branding for 'TryReact', the reaction channel of major creator Trymacs (850k+ Subscribers).",
+    
+    // 👇 The updated case study focusing on the fan-art-to-official pipeline
+    content: "In November 2020, I initiated a passion project to design a fresh banner and profile picture for 'TryReact', the dedicated reaction channel for the massive German YouTube creator, Trymacs. My goal was to create a recognizable visual identity that captured the energetic vibe of the channel. After completing the design, I shared the artwork online and tagged the official Trymacs account and his management team. The bold typography and clean composition caught their attention immediately, and his manager reached out directly to ask if they could officially adopt it for the channel. The branding was highly successful and is still actively used today, reaching an audience of over 850,000 subscribers. This project highlights the power of proactive community engagement and creating high-quality, targeted design work.",
+    
     image: "/TeamTry-Project/TeamTry-Banner.png",
-    tags: ["Sketch", "Game Design", "UI/UX", "Drawing"],
+    tags: ["Branding", "Social Media Design", "Digital Art", "Typography"],
     link: "https://www.youtube.com/@TryReact",
     github: "",
-    date: "August 2025",
-    role: "Programmer & Game Designer",
+    date: "November 2020",
+    role: "Graphic Designer",
     gallery: [
       "/TeamTry-Project/TeamTry-Banner.png",
       "/TeamTry-Project/TeamTry.png",
-    ] 
+    ]
   },
 
     {
     id: "Valorant Contest Design Winner 2021",
-    title: "Valorant Contest Design Winner 2021",
-    description: "...",
-    content: "...",
+    title: "VALORANT DACH: Creative Clash Winner",
+    description: "The official winning entry for the VALORANT DACH 'Creative Clash' contest, featuring a custom Killjoy scene designed to celebrate the game's 1st Anniversary.",
+    content: "In June 2021, I participated in the official 'Creative Clash' design contest hosted by VALORANT DACH (@VALORANTde). The creative brief challenged artists to take official artwork of the agent Killjoy and integrate her into a fitting or humorous new setting. To celebrate a major milestone for the community, I designed a scene themed around VALORANT's 1st Anniversary. I focused on building a festive, cohesive atmosphere that stayed true to Killjoy's tech-savvy personality while matching the game's vibrant, edgy art style. My final animated entry was officially selected as the contest winner by the regional team. A huge honor that highlights my ability to adapt and expand upon established, high-profile gaming IPs.",
     image: "/Valorant Contest/0314.gif",
-    tags: ["Sketch", "Game Design", "UI/UX", "Drawing"],
+    tags: ["Digital Art", "Graphic Design"],
     link: "https://x.com/VALORANTde/status/1405844376929062913?s=20",
     github: "",
-    date: "August 2025",
-    role: "Programmer & Game Designer",
-    gallery: [] 
+    date: "June 2021",
+    role: "Grafik Designer",
+    gallery: []
   },
 
 ];
@@ -104,6 +145,10 @@ const projects = [
 export function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (

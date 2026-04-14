@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Link } from "react-router"; // Assuming you are using react-router for navigation
 
 export function Footer() {
   return (
@@ -33,7 +34,6 @@ export function Footer() {
             <Linkedin className="h-6 w-6" />
           </a>
           <a
-            // 👇 Added mailto: right here!
             href="mailto:trananbrandl@gmail.com"
             className="text-slate-400 hover:text-[#5367df] transition-colors"
           >
@@ -41,9 +41,23 @@ export function Footer() {
             <Mail className="h-6 w-6" />
           </a>
         </div>
-        <p className="text-sm text-slate-500 font-['Montserrat']">
-          © {new Date().getFullYear()} Tran An Brandl. All rights reserved. Built with React & Tailwind with the power of AI.
-        </p>
+
+        <div className="space-y-4">
+          <p className="text-sm text-slate-500 font-['Montserrat']">
+            © {new Date().getFullYear()} Tran An Brandl. All rights reserved. Built with React & Tailwind with the power of AI.
+          </p>
+          
+          {/* 👇 Added Imprint and Privacy Policy links */}
+          <nav className="flex justify-center space-x-4 text-xs text-slate-500 font-['Montserrat'] uppercase tracking-widest">
+            <Link to="/imprint" className="hover:text-[#ADB9FF] transition-colors">
+              Imprint
+            </Link>
+            <span className="text-slate-700">|</span>
+            <Link to="/privacy" className="hover:text-[#ADB9FF] transition-colors">
+              Privacy Policy
+            </Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );

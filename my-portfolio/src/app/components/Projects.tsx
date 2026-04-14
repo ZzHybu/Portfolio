@@ -4,22 +4,32 @@ import { Link } from "react-router";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const projects = [
+    /*{
+    id: "AimRPG - Game Design and Development",
+    title: "AimRPG - Skill-Based Aim-RPG",
+    description: "A skill-based RPG developed in Unity (C#) that blends classic character progression with FPS aim-trainer mechanics in a turn-based combat system.",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1080&auto=format&fit=crop",
+    tags: ["Unity", "C#", "Game Design", "Gameplay Programming", "RPG"],
+    link: "",
+    github: "",
+  },*/
+
   {
     id: "Environment design in Unity",
-    title: "Environment design in Unity",
-    description: "Still work in progress, but I'm currently designing a beach environment in Unity.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1080&auto=format&fit=crop",
-    tags: ["Unity", "Environment Design", "3D Art", "Game Development","Shader"],
+    title: "Environment Design in Unity",
+    description: "A work-in-progress beach environment in Unity, focused on mastering technical art and building custom water and grass materials using Shader Graph.",
+    image: "/games/shader.png",
+    tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
     link: "",
     github: "",
   },
 
   {
-    id: "AimRPG - Game Design and Development",
-    title: "AimRPG - Game Design and Development",
-    description: "Still work in progress, but I'm currently working on a Turn-Based RPG game in Unity, where players can test their aim and reflexes against various enemies in a dynamic combat system.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1080&auto=format&fit=crop",
-    tags: ["Unity", "Game Design", "Game Development", "RPG"],
+    id: "OpenGL",
+    title: "OpenGL",
+    description: "A work-in-progress beach environment in Unity, focused on mastering technical art and building custom water and grass materials using Shader Graph.",
+    image: "/games/shader.png",
+    tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
     link: "",
     github: "",
   },
@@ -36,30 +46,30 @@ const projects = [
 
   {
     id: "Scratch Game - Egg Cooker",
-    title: "Scratch Game - Egg Cooker",
-    description: "...",
+    title: "Egg Cooker - Scratch Showcase Demo",
+    description: "A competitive, 2-player Scratch game inspired by Overcooked, developed as an inspiring showcase demo to motivate kids at a summer coding camp.",
     image: "/EggCooker/Egg_Cooker.png",
-    tags: ["..."],
+    tags: ["Scratch", "Game Design", "Visual Scripting", "Game Mechanics"],
     link: "https://scratch.mit.edu/projects/1209316655/",
     github: "",
   },
 
   {
     id: "TeamTry (TryReact) - Banner and profile picture design",
-    title: "TeamTry (TryReact) - Banner and profile picture design",
-    description: "A collaborative project management tool helping teams organize tasks and boost productivity.",
+    title: "TeamTry (TryReact) Branding",
+    description: "What began as a proactive passion project was officially adopted as the channel branding for 'TryReact', the reaction channel of major creator Trymacs (850k+ Subscribers).",
     image: "/TeamTry-Project/TeamTry-Banner.png",
-    tags: ["TypeScript", "Next.js", "Tailwind CSS"],
+    tags: ["Branding", "Social Media Design", "Digital Art", "Typography"],
     link: "https://www.youtube.com/@TryReact",
-    github: "",
+    github: ""
   },
 
   {
     id: "Valorant Contest Design Winner 2021",
-    title: "Valorant Contest Design Winner 2021",
-    description: "A collaborative project management tool helping teams organize tasks and boost productivity.",
+    title: "VALORANT DACH: Creative Clash Winner",
+    description: "The official winning entry for the VALORANT DACH 'Creative Clash' contest, featuring a custom Killjoy scene designed to celebrate the game's 1st Anniversary.",
     image: "/Valorant Contest/KJ-Wallpaper.png",
-    tags: ["TypeScript", "Next.js", "Tailwind CSS"],
+    tags: ["Digital Art", "Graphic Design"],
     link: "https://x.com/VALORANTde/status/1405844376929062913?s=20",
     github: ""
   },

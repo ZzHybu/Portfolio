@@ -53,7 +53,6 @@ export function Contact() {
             transition={{ duration: 0.5 }}
             className="rounded-xl border border-[#ADB9FF]/20 bg-[#171614] p-6 shadow-sm"
           >
-            {/* 👇 ADDED action and method here! */}
             <form action="https://formspree.io/f/xojkvvkb" method="POST" className="space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="space-y-2">
