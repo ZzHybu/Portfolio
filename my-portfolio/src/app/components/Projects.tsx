@@ -27,11 +27,11 @@ const projects = [
   {
     id: "OpenGL",
     title: "OpenGL",
-    description: "A work-in-progress beach environment in Unity, focused on mastering technical art and building custom water and grass materials using Shader Graph.",
-    image: "/games/shader.png",
-    tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
+    description: "A custom 3D rendering project built in Java and OpenGL, featuring from-scratch matrix mathematics, custom GLSL shaders, and an integrated .obj model parser.",
+    image: "/opengl/egadd.gif",
+    tags: ["OpenGL", "Java", "LWJGL", "3D Math", "GLSL", "Computer Graphics"],
     link: "",
-    github: "",
+    github: "https://github.com/ZzHybu/CG_Project",
   },
 
   {

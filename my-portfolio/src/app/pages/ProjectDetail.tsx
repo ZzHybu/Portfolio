@@ -46,22 +46,24 @@ const projects = [
 
   {
     id: "OpenGL",
-    title: "OpenGL",
+    title: "OpenGL Rendering Engine",
     
-    description: "A work-in-progress OpenGL project focused on mastering graphics programming and custom visual effects.",
+    // 👇 A punchy hook summarizing the technical scope
+    description: "A custom 3D rendering project built in Java and OpenGL, featuring from-scratch matrix mathematics, custom GLSL shaders, and an integrated .obj model parser.",
     
-    content: "This project serves as one of my first major deep dives into Unity, specifically focusing on the intersection of 3D environment design and technical art. As an ongoing learning experience, I am actively following advanced technical tutorials to master Unity's Shader Graph. So far, I have successfully built custom node-based materials from scratch, including a dynamic grass shader and a stylized water shader. This hands-on approach is allowing me to understand the logic behind real-time rendering and visual effects, helping me create more immersive, dynamic 3D environments.",
+    // 👇 A detailed breakdown of your specific programming achievements
+    content: "Developed as part of a university Computer Graphics module, this project explores the low-level mathematical and programmatic foundations of 3D rendering. Built using Java and LWJGL within an academic framework, I was responsible for implementing the core rendering pipeline from scratch. On the mathematical side, I engineered a custom 4x4 Matrix class to manually calculate translation, rotation, scaling, and perspective projection. On the graphics side, I wrote custom Vertex and Fragment shaders in GLSL, progressing from basic Gouraud shading to a fully implemented Phong illumination model. I also built a dedicated texture shader to handle dynamic resolution swapping and Mipmap filtering. The project culminated in writing a custom `.obj` file parser to extract vertex, normal, and UV data to buffer (VAO/VBO) and render complex 3D models alongside procedurally generated primitives.",
     
-    image: "/games/shader.png", 
+    image: "/opengl/ellen.gif", 
     
-    tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
+    // 👇 Updated tags to reflect the hardcore programming nature of the project
+    tags: ["OpenGL", "Java", "LWJGL", "3D Math", "GLSL", "Computer Graphics"],
     link: "",
-    github: "",
-    date: "Ongoing",
-    role: "Environment Designer",
+    github: "https://github.com/ZzHybu/CG_Project",
+    date: "February 2026",
+    role: "Graphics Programmer",
     gallery: [
-      "/games/gif1_shader.gif",
-      "/games/gif2_shader.gif",
+      "/opengl/egadd.gif",
     ]
   },
 
