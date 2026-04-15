@@ -48,15 +48,11 @@ const projects = [
     id: "OpenGL",
     title: "OpenGL Rendering Engine",
     
-    // 👇 A punchy hook summarizing the technical scope
     description: "A custom 3D rendering project built in Java and OpenGL, featuring from-scratch matrix mathematics, custom GLSL shaders, and an integrated .obj model parser.",
     
-    // 👇 A detailed breakdown of your specific programming achievements
     content: "Developed as part of a university Computer Graphics module, this project explores the low-level mathematical and programmatic foundations of 3D rendering. Built using Java and LWJGL within an academic framework, I was responsible for implementing the core rendering pipeline from scratch. On the mathematical side, I engineered a custom 4x4 Matrix class to manually calculate translation, rotation, scaling, and perspective projection. On the graphics side, I wrote custom Vertex and Fragment shaders in GLSL, progressing from basic Gouraud shading to a fully implemented Phong illumination model. I also built a dedicated texture shader to handle dynamic resolution swapping and Mipmap filtering. The project culminated in writing a custom `.obj` file parser to extract vertex, normal, and UV data to buffer (VAO/VBO) and render complex 3D models alongside procedurally generated primitives.",
-    
+
     image: "/opengl/ellen.gif", 
-    
-    // 👇 Updated tags to reflect the hardcore programming nature of the project
     tags: ["OpenGL", "Java", "LWJGL", "3D Math", "GLSL", "Computer Graphics"],
     link: "",
     github: "https://github.com/ZzHybu/CG_Project",
@@ -89,15 +85,12 @@ const projects = [
     id: "Scratch Game - Egg Cooker",
     title: "Egg Cooker - Scratch Showcase Demo",
     
-    // 👇 Updated hook emphasizing the motivational/showcase aspect
     description: "A competitive, 2-player Scratch game inspired by Overcooked, developed as an inspiring showcase demo to motivate kids at a summer coding camp.",
-    
-    // 👇 Updated case study explaining it was a benchmark for the students' goals
+
     content: "Developed in collaboration with Jasmin Bindemann and other colleagues, 'Egg Cooker' is a fast-paced, 2-player cooking game inspired by the chaotic fun of Overcooked. Players compete head-to-head in a bustling egg restaurant, racing against the clock to serve customers and rack up the most points. This project was specifically created as a motivational showcase for a children's summer coding camp. Rather than being a step-by-step tutorial, the game served as an inspiring benchmark of what the students could achieve by the end of the program. It successfully sparked their excitement for computer science by showing them the complex, highly interactive mechanics they could build themselves using visual scripting.",
     
     image: "/EggCooker/Egg_Cooker.png",
     
-    // 👇 Swapped "Educational" for "Game Mechanics" to focus on your design skills
     tags: ["Scratch", "Game Design", "Visual Scripting", "Game Mechanics"],
     link: "https://scratch.mit.edu/projects/1209316655/",
     github: "",
@@ -110,10 +103,8 @@ const projects = [
     id: "TeamTry (TryReact) - Banner and profile picture design",
     title: "TeamTry (TryReact) Branding",
     
-    // 👇 Updated hook to highlight the organic adoption
     description: "What began as a proactive passion project was officially adopted as the channel branding for 'TryReact', the reaction channel of major creator Trymacs (850k+ Subscribers).",
     
-    // 👇 The updated case study focusing on the fan-art-to-official pipeline
     content: "In November 2020, I initiated a passion project to design a fresh banner and profile picture for 'TryReact', the dedicated reaction channel for the massive German YouTube creator, Trymacs. My goal was to create a recognizable visual identity that captured the energetic vibe of the channel. After completing the design, I shared the artwork online and tagged the official Trymacs account and his management team. The bold typography and clean composition caught their attention immediately, and his manager reached out directly to ask if they could officially adopt it for the channel. The branding was highly successful and is still actively used today, reaching an audience of over 850,000 subscribers. This project highlights the power of proactive community engagement and creating high-quality, targeted design work.",
     
     image: "/TeamTry-Project/TeamTry-Banner.png",
