@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
 import { Link } from "react-router"; // Assuming you are using react-router for navigation
 
 export function Footer() {
@@ -33,6 +33,15 @@ export function Footer() {
             <span className="sr-only">LinkedIn</span>
             <Linkedin className="h-6 w-6" />
           </a>
+             <a
+            href="https://www.instagram.com/hybu.illust/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-slate-400 hover:text-[#5367df] transition-colors"
+          >
+            <span className="sr-only">Instagram</span>
+            <Instagram className="h-6 w-6" />
+          </a>
           <a
             href="mailto:trananbrandl@gmail.com"
             className="text-slate-400 hover:text-[#5367df] transition-colors"
@@ -47,7 +56,6 @@ export function Footer() {
             © {new Date().getFullYear()} Tran An Brandl. All rights reserved. Built with React & Tailwind with the power of AI.
           </p>
           
-          {/* 👇 Added Imprint and Privacy Policy links */}
           <nav className="flex justify-center space-x-4 text-xs text-slate-500 font-['Montserrat'] uppercase tracking-widest">
             <Link to="/imprint" className="hover:text-[#ADB9FF] transition-colors">
               Imprint

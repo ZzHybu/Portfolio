@@ -30,7 +30,7 @@ export function Hero() {
               {/* 2. The Inner Container (Matches Background) */}
               <div className="rounded-full overflow-hidden bg-[#222225] w-full h-full relative z-10">
                 <ImageWithFallback
-                  src="/potrait.jpg" 
+                  src={`${import.meta.env.BASE_URL}potrait.jpg`} 
                   alt="Tran An Brandl"
                   className="object-cover w-full h-full"
                 />
@@ -71,7 +71,7 @@ export function Hero() {
 
             <div className="mt-8">
               <a
-                href="/resume.pdf"
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
                 className="group inline-flex h-14 items-center justify-center rounded-full border border-[#ADB9FF]/20 bg-[#171614] px-8 text-lg font-medium font-['Montserrat'] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#5367df]/50 hover:bg-[#ADB9FF]/20 hover:shadow-xl"
               >
                 Resume <DownloadIcon />

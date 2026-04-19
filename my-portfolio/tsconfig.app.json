@@ -24,11 +24,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    /* ADD THESE TWO LINES HERE 👇 */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src"]
+    /* Path Aliases */
+      "paths": {
+        "@/*": ["./src/*"]
+      }
+    },
+    "include": ["src"]
 }

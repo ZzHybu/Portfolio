@@ -1,23 +1,27 @@
 import { Link, useLocation } from "react-router";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
+// import { useTheme } from "next-themes"; // 🌙 Commented out for now
 import { Menu, X } from "lucide-react";
 
+/* 🌙 Commented out until night/light mode is ready!
 const SunIcon = () => (
   <svg width="24" height="24" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white hover:text-slate-300 transition-colors">
     <path d="M19 3.16667V6.33333M19 31.6667V34.8333M7.80583 7.80583L10.0383 10.0383M27.9617 27.9617L30.1942 30.1942M3.16667 19H6.33333M31.6667 19H34.8333M10.0383 27.9617L7.80583 30.1942M30.1942 7.80583L27.9617 10.0383M25.3333 19C25.3333 22.4978 22.4978 25.3333 19 25.3333C15.5022 25.3333 12.6667 22.4978 12.6667 19C12.6667 15.5022 15.5022 12.6667 19 12.6667C22.4978 12.6667 25.3333 15.5022 25.3333 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
+*/
 
 export function Navbar() {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // 🌙 Commented out for now
+  // const [mounted, setMounted] = useState(false);
+  // const { theme, setTheme } = useTheme();
+
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
   const navLinks = [
     { name: "Projects", href: "/#projects" },
@@ -38,9 +42,10 @@ export function Navbar() {
     }
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  // 🌙 Commented out for now
+  // const toggleTheme = () => {
+  //   setTheme(theme === "dark" ? "light" : "dark");
+  // };
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#171614]/70 backdrop-blur-md text-white py-4">
@@ -50,14 +55,14 @@ export function Navbar() {
 
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        {/* 👇 Changed from <Link> to <a> and added onClick with handleScroll pointing to /#hero */}
+        {/* 👇 Logo linking to #hero */}
         <a 
           href="/#hero" 
           onClick={(e) => handleScroll(e, "/#hero")}
           className="flex items-center gap-2 cursor-pointer"
         >
            <div className="h-10 w-auto">
-            <img src="/logo.png" alt="TranAnDZN Logo" className="h-full w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="TranAnDZN Logo" className="h-full w-auto object-contain" />
            </div>
         </a>
 
@@ -74,6 +79,7 @@ export function Navbar() {
             </a>
           ))}
           
+          {/* 🌙 Desktop Theme Toggle (Commented Out)
           <div className="ml-4 border-l border-slate-700 pl-6 h-8 flex items-center">
              <button
                 aria-label="Toggle theme"
@@ -83,10 +89,12 @@ export function Navbar() {
                 <SunIcon />
               </button>
           </div>
+          */}
         </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
+            {/* 🌙 Mobile Theme Toggle (Commented Out)
              <button
                 aria-label="Toggle theme"
                 onClick={toggleTheme}
@@ -94,6 +102,7 @@ export function Navbar() {
               >
                 <SunIcon />
               </button>
+            */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-slate-300 hover:text-white"

@@ -31,7 +31,7 @@ const projects = [
     
     content: "This project serves as one of my first major deep dives into Unity, specifically focusing on the intersection of 3D environment design and technical art. As an ongoing learning experience, I am actively following advanced technical tutorials to master Unity's Shader Graph. So far, I have successfully built custom node-based materials from scratch, including a dynamic grass shader and a stylized water shader. This hands-on approach is allowing me to understand the logic behind real-time rendering and visual effects, helping me create more immersive, dynamic 3D environments.",
     
-    image: "/games/shader.png", 
+    image: `${import.meta.env.BASE_URL}games/shader.png`, 
     
     tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
     link: "",
@@ -39,8 +39,8 @@ const projects = [
     date: "Ongoing",
     role: "Environment Designer",
     gallery: [
-      "/games/gif1_shader.gif",
-      "/games/gif2_shader.gif",
+      `${import.meta.env.BASE_URL}games/gif1_shader.gif`,
+      `${import.meta.env.BASE_URL}games/gif2_shader.gif`,
     ]
   },
 
@@ -52,14 +52,14 @@ const projects = [
     
     content: "Developed as part of a university Computer Graphics module, this project explores the low-level mathematical and programmatic foundations of 3D rendering. Built using Java and LWJGL within an academic framework, I was responsible for implementing the core rendering pipeline from scratch. On the mathematical side, I engineered a custom 4x4 Matrix class to manually calculate translation, rotation, scaling, and perspective projection. On the graphics side, I wrote custom Vertex and Fragment shaders in GLSL, progressing from basic Gouraud shading to a fully implemented Phong illumination model. I also built a dedicated texture shader to handle dynamic resolution swapping and Mipmap filtering. The project culminated in writing a custom `.obj` file parser to extract vertex, normal, and UV data to buffer (VAO/VBO) and render complex 3D models alongside procedurally generated primitives.",
 
-    image: "/opengl/ellen.gif", 
+    image: `${import.meta.env.BASE_URL}opengl/ellen.gif`, 
     tags: ["OpenGL", "Java", "LWJGL", "3D Math", "GLSL", "Computer Graphics"],
     link: "",
     github: "https://github.com/ZzHybu/CG_Project",
     date: "February 2026",
     role: "Graphics Programmer",
     gallery: [
-      "/opengl/egadd.gif",
+      `${import.meta.env.BASE_URL}opengl/egadd.gif`,
     ]
   },
 
@@ -68,16 +68,16 @@ const projects = [
     title: "Maya Modelling - Coffee Machine",
     description: "A detailed 3D model of a coffee machine created for my university '3D Design' module. Modeled entirely in Autodesk Maya and custom-textured using high-quality materials from Poly Haven.",
     content: "For this university module, I chose to model a Tescoma espresso machine. I utilized AI to generate clear front and side views to use as image planes for accurate proportions. The modeling process started with blocking out the base shapes from bottom to top. A major challenge was the drip grate; I modeled a generated grid pattern and used Boolean difference operations to cut out the holes. Maintaining clean topology for subdivision surfaces required careful manual corrections using the Multi Cut Tool to keep the hard surface edges sharp. Finally, I handled the texturing using Arnold's aiStandard Surface-shader for the chrome and plastic materials, and applied a marble texture to the cups to achieve a high-quality look.",
-    image: "/projects/final_scene.jpg",
+    image: `${import.meta.env.BASE_URL}projects/final_scene.jpg`,
     tags: ["Autodesk Maya", "3D Modeling", "Arnold", "Texturing", "3 Point Lighting"],
     link: "",
     github: "",
     date: "February 2026",
     role: "3D Artist",
     gallery: [
-      "/projects/final_scene.jpg",
-      "/projects/Screenshot_3.png",
-      "/projects/Screenshot_2.png",
+      `${import.meta.env.BASE_URL}projects/final_scene.jpg`,
+      `${import.meta.env.BASE_URL}projects/Screenshot_3.png`,
+      `${import.meta.env.BASE_URL}projects/Screenshot_2.png`,
     ]
   },
 
@@ -87,16 +87,20 @@ const projects = [
     
     description: "A competitive, 2-player Scratch game inspired by Overcooked, developed as an inspiring showcase demo to motivate kids at a summer coding camp.",
 
-    content: "Developed in collaboration with Jasmin Bindemann and other colleagues, 'Egg Cooker' is a fast-paced, 2-player cooking game inspired by the chaotic fun of Overcooked. Players compete head-to-head in a bustling egg restaurant, racing against the clock to serve customers and rack up the most points. This project was specifically created as a motivational showcase for a children's summer coding camp. Rather than being a step-by-step tutorial, the game served as an inspiring benchmark of what the students could achieve by the end of the program. It successfully sparked their excitement for computer science by showing them the complex, highly interactive mechanics they could build themselves using visual scripting.",
+    content: (
+      <>
+        Developed in collaboration with <a href="https://jasbi05.github.io/jasminB-dev-portfolio/" target="_blank" rel="noreferrer" className="text-[#5367df] hover:underline font-medium">Jasmin Bindemann</a> and other colleagues, 'Egg Cooker' is a fast-paced, 2-player cooking game inspired by the chaotic fun of Overcooked. Players compete head-to-head in a bustling egg restaurant, racing against the clock to serve customers and rack up the most points. This project was specifically created as a motivational showcase for a children's summer coding camp. Rather than being a step-by-step tutorial, the game served as an inspiring benchmark of what the students could achieve by the end of the program. It successfully sparked their excitement for computer science by showing them the complex, highly interactive mechanics they could build themselves using visual scripting.
+      </>
+    ),
     
-    image: "/EggCooker/Egg_Cooker.png",
+    image: `${import.meta.env.BASE_URL}EggCooker/Egg_Cooker.png`,
     
     tags: ["Scratch", "Game Design", "Visual Scripting", "Game Mechanics"],
     link: "https://scratch.mit.edu/projects/1209316655/",
     github: "",
     date: "August 2025",
     role: "Programmer & Game Designer",
-    gallery: []
+    gallery: [`${import.meta.env.BASE_URL}EggCooker/gameplay.gif`]
   },
 
   {
@@ -107,15 +111,15 @@ const projects = [
     
     content: "In November 2020, I initiated a passion project to design a fresh banner and profile picture for 'TryReact', the dedicated reaction channel for the massive German YouTube creator, Trymacs. My goal was to create a recognizable visual identity that captured the energetic vibe of the channel. After completing the design, I shared the artwork online and tagged the official Trymacs account and his management team. The bold typography and clean composition caught their attention immediately, and his manager reached out directly to ask if they could officially adopt it for the channel. The branding was highly successful and is still actively used today, reaching an audience of over 850,000 subscribers. This project highlights the power of proactive community engagement and creating high-quality, targeted design work.",
     
-    image: "/TeamTry-Project/TeamTry-Banner.png",
+    image: `${import.meta.env.BASE_URL}TeamTry-Project/TeamTry-Banner.png`,
     tags: ["Branding", "Social Media Design", "Digital Art", "Typography"],
     link: "https://www.youtube.com/@TryReact",
     github: "",
     date: "November 2020",
     role: "Graphic Designer",
     gallery: [
-      "/TeamTry-Project/TeamTry-Banner.png",
-      "/TeamTry-Project/TeamTry.png",
+      `${import.meta.env.BASE_URL}TeamTry-Project/TeamTry-Banner.png`,
+      `${import.meta.env.BASE_URL}TeamTry-Project/TeamTry.png`,
     ]
   },
 
@@ -124,7 +128,7 @@ const projects = [
     title: "VALORANT DACH: Creative Clash Winner",
     description: "The official winning entry for the VALORANT DACH 'Creative Clash' contest, featuring a custom Killjoy scene designed to celebrate the game's 1st Anniversary.",
     content: "In June 2021, I participated in the official 'Creative Clash' design contest hosted by VALORANT DACH (@VALORANTde). The creative brief challenged artists to take official artwork of the agent Killjoy and integrate her into a fitting or humorous new setting. To celebrate a major milestone for the community, I designed a scene themed around VALORANT's 1st Anniversary. I focused on building a festive, cohesive atmosphere that stayed true to Killjoy's tech-savvy personality while matching the game's vibrant, edgy art style. My final animated entry was officially selected as the contest winner by the regional team. A huge honor that highlights my ability to adapt and expand upon established, high-profile gaming IPs.",
-    image: "/Valorant Contest/0314.gif",
+    image: `${import.meta.env.BASE_URL}Valorant Contest/0314.gif`,
     tags: ["Digital Art", "Graphic Design"],
     link: "https://x.com/VALORANTde/status/1405844376929062913?s=20",
     github: "",

@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const projects = [
-    /*{
+  /*{
     id: "AimRPG - Game Design and Development",
     title: "AimRPG - Skill-Based Aim-RPG",
     description: "A skill-based RPG developed in Unity (C#) that blends classic character progression with FPS aim-trainer mechanics in a turn-based combat system.",
@@ -18,7 +18,7 @@ const projects = [
     id: "Environment design in Unity",
     title: "Environment Design in Unity",
     description: "A work-in-progress beach environment in Unity, focused on mastering technical art and building custom water and grass materials using Shader Graph.",
-    image: "/games/shader.png",
+    image: `${import.meta.env.BASE_URL}games/gif1_shader.gif`,
     tags: ["Unity", "Environment Design", "3D Art", "Game Development", "Shader Graph"],
     link: "",
     github: "",
@@ -28,7 +28,7 @@ const projects = [
     id: "OpenGL",
     title: "OpenGL",
     description: "A custom 3D rendering project built in Java and OpenGL, featuring from-scratch matrix mathematics, custom GLSL shaders, and an integrated .obj model parser.",
-    image: "/opengl/egadd.gif",
+    image: `${import.meta.env.BASE_URL}opengl/egadd.gif`,
     tags: ["OpenGL", "Java", "LWJGL", "3D Math", "GLSL", "Computer Graphics"],
     link: "",
     github: "https://github.com/ZzHybu/CG_Project",
@@ -38,7 +38,7 @@ const projects = [
     id: "Maya Modelling - Coffee Machine",
     title: "Maya Modelling - Coffee Machine",
     description: "A detailed 3D model of a coffee machine created for my university '3D Design' module. Modeled entirely in Autodesk Maya and custom-textured using high-quality materials from Poly Haven.",
-    image: "/projects/final_scene.jpg", 
+    image: `${import.meta.env.BASE_URL}projects/final_scene.jpg`, 
     tags: ["Autodesk Maya", "3D Modeling", "Arnold", "Texturing", "3 Point Lighting"],
     link: "",
     github: "",
@@ -48,7 +48,7 @@ const projects = [
     id: "Scratch Game - Egg Cooker",
     title: "Egg Cooker - Scratch Showcase Demo",
     description: "A competitive, 2-player Scratch game inspired by Overcooked, developed as an inspiring showcase demo to motivate kids at a summer coding camp.",
-    image: "/EggCooker/Egg_Cooker.png",
+    image: `${import.meta.env.BASE_URL}EggCooker/gameplay.gif`,
     tags: ["Scratch", "Game Design", "Visual Scripting", "Game Mechanics"],
     link: "https://scratch.mit.edu/projects/1209316655/",
     github: "",
@@ -58,7 +58,7 @@ const projects = [
     id: "TeamTry (TryReact) - Banner and profile picture design",
     title: "TeamTry (TryReact) Branding",
     description: "What began as a proactive passion project was officially adopted as the channel branding for 'TryReact', the reaction channel of major creator Trymacs (850k+ Subscribers).",
-    image: "/TeamTry-Project/TeamTry-Banner.png",
+    image: `${import.meta.env.BASE_URL}TeamTry-Project/TeamTry-Banner.png`,
     tags: ["Branding", "Social Media Design", "Digital Art", "Typography"],
     link: "https://www.youtube.com/@TryReact",
     github: ""
@@ -68,7 +68,7 @@ const projects = [
     id: "Valorant Contest Design Winner 2021",
     title: "VALORANT DACH: Creative Clash Winner",
     description: "The official winning entry for the VALORANT DACH 'Creative Clash' contest, featuring a custom Killjoy scene designed to celebrate the game's 1st Anniversary.",
-    image: "/Valorant Contest/KJ-Wallpaper.png",
+    image: `${import.meta.env.BASE_URL}Valorant Contest/KJ-Wallpaper.png`,
     tags: ["Digital Art", "Graphic Design"],
     link: "https://x.com/VALORANTde/status/1405844376929062913?s=20",
     github: ""
@@ -96,13 +96,18 @@ export function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group flex flex-col overflow-hidden rounded-xl border border-[#ADB9FF]/20 bg-[#171614] shadow-sm transition-all hover:shadow-md hover:border-[#5367df]/50"
             >
-              <div className="relative aspect-video overflow-hidden">
+              {/* 👇 Wrapped the image in a Link component! */}
+              <Link 
+                to={`/project/${project.id}`} 
+                className="relative block aspect-video overflow-hidden cursor-pointer"
+              >
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-              </div>
+              </Link>
+              
               <div className="flex flex-col flex-grow p-6">
                 <h3 className="text-xl font-bold font-['Montserrat']">{project.title}</h3>
                 <p className="mt-2 text-sm text-slate-400 line-clamp-2 font-['Montserrat']">
@@ -118,7 +123,6 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-                {/* 👇 Added mt-auto to push the footer to the bottom, ensuring cards look even */}
                 <div className="mt-auto pt-6 flex items-center justify-between">
                   <Link
                     to={`/project/${project.id}`}
@@ -127,7 +131,6 @@ export function Projects() {
                     Details <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                   <div className="flex gap-4">
-                    {/* 👇 Conditional rendering: Only render if project.github exists and isn't empty */}
                     {project.github && project.github !== "" && (
                       <a
                         href={project.github}
@@ -139,7 +142,6 @@ export function Projects() {
                         <Github className="h-5 w-5" />
                       </a>
                     )}
-                    {/* 👇 Conditional rendering: Only render if project.link exists and isn't empty */}
                     {project.link && project.link !== "" && (
                       <a
                         href={project.link}
