@@ -23,17 +23,20 @@ export function Navbar() {
   //   setMounted(true);
   // }, []);
 
+  // 👇 Added BASE_URL so they work from the Project Details page too!
   const navLinks = [
-    { name: "Projects", href: "/#projects" },
-    { name: "Skills", href: "/#skills" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Projects", href: `${import.meta.env.BASE_URL}#projects` },
+    { name: "Skills", href: `${import.meta.env.BASE_URL}#skills` },
+    { name: "Contact", href: `${import.meta.env.BASE_URL}#contact` },
   ];
 
+  // 👇 Updated to look for the "#" anywhere in the string
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("/#")) {
+    if (href.includes("#")) {
       const targetId = href.split("#")[1];
       const element = document.getElementById(targetId);
       
+      // Only smooth scroll if the element exists on the CURRENT page
       if (element) {
         e.preventDefault();
         element.scrollIntoView({ behavior: 'smooth' });
@@ -55,10 +58,10 @@ export function Navbar() {
 
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        {/* 👇 Logo linking to #hero */}
+        {/* 👇 Logo link now safely uses BASE_URL */}
         <a 
-          href="/#hero" 
-          onClick={(e) => handleScroll(e, "/#hero")}
+          href={`${import.meta.env.BASE_URL}#hero`} 
+          onClick={(e) => handleScroll(e, `${import.meta.env.BASE_URL}#hero`)}
           className="flex items-center gap-2 cursor-pointer"
         >
            <div className="h-10 w-auto">

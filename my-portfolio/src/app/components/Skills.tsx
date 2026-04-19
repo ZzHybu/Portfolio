@@ -6,7 +6,7 @@ const skills = [
   {
     category: "Software Engineering",
     icon: Code,
-    items: ["Java", "Python", "PostgreSQL", "Object-Oriented Programming"],
+    items: ["Java", "Python", "C#", "PostgreSQL", "Object-Oriented Programming"],
   },
   {
     category: "Media & Interactive",
