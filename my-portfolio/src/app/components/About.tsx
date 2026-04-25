@@ -28,9 +28,9 @@ export function About() {
             transition={{ duration: 0.5 }}
             className="flex-1 space-y-6"
           >
-            <h2 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl font-[MADE_Soulmaze,Arial_Black,sans-serif] uppercase">About Me</h2>
+            <h2 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl font-['MADE_Soulmaze','Arial_Black',sans-serif] uppercase">About Me</h2>
             
-            <p className="text-slate-300 leading-relaxed font-[Montserrat]">
+            <p className="text-slate-300 leading-relaxed font-['Montserrat']">
               There's no day without a to-do list for me. I am currently studying International Media and Computing at{" "}
               {/* 👇 Removed underline classes here */}
               <a 
@@ -55,12 +55,12 @@ export function About() {
             </p>
             
             <div className="border-l-4 border-[#5367df] bg-[#5367df]/10 p-5 rounded-r-xl my-6">
-              <p className="text-white leading-relaxed font-[Montserrat] font-medium">
+              <p className="text-white leading-relaxed font-['Montserrat'] font-medium">
                 I am currently in my 4th semester and heavily involved in an exciting university project: "Mixed-reality training reimagined: Intelligent stress adaptation in real time." We are using virtual reality to simulate specific situations, while an AI system analyzes the user’s stress levels in real time and adapts the environment to create a responsive, personalized training experience. I will be showcasing this work at the IMI-Showtime presentation event on July 31st. More details and insights to come!
               </p>
             </div>
 
-            <p className="text-slate-300 leading-relaxed font-[Montserrat]">
+            <p className="text-slate-300 leading-relaxed font-['Montserrat']">
               Beyond my studies, I am proud to be a Course Leader for{" "}
               {/* 👇 Removed underline classes here */}
               <a 
@@ -74,7 +74,7 @@ export function About() {
               , where I teach young children the basics of computer science with the goal of reducing the gender gap in tech. I always welcome challenges as opportunities to grow and improve my skills.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 pt-4 text-sm font-medium font-[Montserrat]">
+            <div className="grid grid-cols-2 gap-4 pt-4 text-sm font-medium font-['Montserrat']">
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#5367df]" />
                 <span>Creative Thinker</span>

@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 
-// Expanded to 14 items to create a massive, screen-filling wall
 const projects = [
   { id: 1, size: "col-span-2 row-span-2", img: `${import.meta.env.BASE_URL}featured/mc-banner.jpg`, imgClass: "scale-108" },
   { id: 2, size: "col-span-1 row-span-1", img: `${import.meta.env.BASE_URL}featured/1.png`, imgClass: "" },
@@ -22,7 +21,8 @@ export function FeaturedSection() {
       
       <div className="flex justify-center w-full px-2">
         
-        <div className="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-7 auto-rows-[160px] md:auto-rows-[200px] gap-2 md:gap-3 grid-flow-dense min-w-[1000px] md:min-w-[1400px] w-full max-w-[1800px]">
+        {/* 👇 FIX HERE: Removed grid-cols-5 md:grid-cols-6 and locked it to a flawless grid-cols-7 */}
+        <div className="grid grid-cols-7 auto-rows-[160px] md:auto-rows-[200px] gap-2 md:gap-3 grid-flow-dense min-w-[1000px] md:min-w-[1400px] w-full max-w-[1800px]">
           
           {projects.map((project, index) => (
             <motion.div
@@ -40,7 +40,6 @@ export function FeaturedSection() {
                   className={`h-full w-full object-cover ${project.imgClass || ''}`}
                 />
                 
-                {/* 👇 Added back the dark fade, but removed the hover animation! */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#171614] via-[#171614]/20 to-transparent opacity-80" />
               </div>
             </motion.div>
