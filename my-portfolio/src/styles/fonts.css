@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face {
+  /* 👇 Removed the underscore here! */
+  font-family: 'MADE Soulmaze'; 
+  src: url('../assets/fonts/MADESoulmaze.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* 👇 Removed the underscore here! */
+  font-family: 'Akira Expanded'; 
+  src: url('../assets/fonts/AkiraExpanded.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
