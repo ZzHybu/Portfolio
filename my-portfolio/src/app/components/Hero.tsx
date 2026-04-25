@@ -11,7 +11,6 @@ const DownloadIcon = () => (
 
 export function Hero() {
   return (
-    // 👇 Changed min-h-[calc(100vh-5rem)] to min-h-[80vh] right here
    <section id="hero" className="relative flex min-h-[80vh] items-center justify-center overflow-hidden py-10 lg:py-0 text-white">
       <div className="container px-4 md:px-12 lg:px-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
@@ -23,7 +22,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex items-center justify-center lg:justify-end relative"
           >
-          <div className="relative aspect-square w-full max-w-[400px] lg:max-w-[500px] flex items-center justify-center">
+          {/* 👇 ONLY FIX HERE: Changed lg:max-w to 400px, and added xl:max-w to 500px for bigger screens */}
+          <div className="relative aspect-square w-full max-w-[400px] lg:max-w-[400px] 2xl:max-w-[500px] flex items-center justify-center">
             
             {/* 1. The Glass Border Wrapper */}
             <div className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-tr from-[#ADB9FF]/40 via-white/10 to-transparent">
@@ -60,7 +60,8 @@ export function Hero() {
                 Hey I'm
               </h2>
               
-              <h1 className="text-5xl font-['MADE_Soulmaze','Arial_Black',sans-serif] tracking-[-0.05em] sm:text-7xl xl:text-[6.5rem] leading-[0.9] text-white uppercase mb-6">
+              {/* 👇 ONLY FIX HERE: Added lg:text-6xl so the massive font scales down perfectly on a Mac */}
+             <h1 className="text-5xl font-['MADE_Soulmaze','Arial_Black',sans-serif] tracking-[-0.05em] sm:text-7xl lg:text-6xl 2xl:text-[6.5rem] leading-[0.9] text-white uppercase mb-6">
                 TRAN AN<br />BRANDL
               </h1>
               
