@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
-import { ArrowLeft, ExternalLink, Github, Calendar, User } from "lucide-react";
-import { motion } from "motion/react";
+import { ArrowLeft, ExternalLink, Github, Calendar, User, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const projects = [
@@ -142,9 +142,21 @@ const projects = [
 export function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+  
+  // 👇 Added state to track which image is currently opened in fullscreen
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // 👇 Added keyboard event listener so pressing "Escape" closes the gallery
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   if (!project) {
@@ -157,7 +169,7 @@ export function ProjectDetail() {
   }
 
   return (
-    <article className="min-h-screen pb-20 pt-10 bg-[#222225] text-white">
+    <article className="min-h-screen pb-20 pt-10 bg-[#222225] text-white relative">
       <div className="container mx-auto px-4 md:px-6">
         <Link to="/#projects" className="inline-flex items-center text-sm font-medium text-slate-400 hover:text-white mb-8 transition-colors font-['Montserrat']">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
@@ -184,7 +196,6 @@ export function ProjectDetail() {
               <div className="prose prose-lg prose-invert max-w-none text-slate-300 font-['Montserrat']">
                 <p className="font-bold text-white">{project.description}</p>
                 
-                {/* 👇 Added a subtle line divider! */}
                 {project.content && (
                   <>
                     <div className="my-8 h-px w-full bg-[#ADB9FF]/20" />
@@ -193,30 +204,33 @@ export function ProjectDetail() {
                 )}
               </div>
 
-              {/* 👇 DYNAMIC GALLERY SECTION */}
               {project.gallery && project.gallery.length > 0 && (
                 <div className="mt-12 space-y-4">
                   <h3 className="text-2xl font-bold font-['Montserrat'] text-white mb-6">Gallery</h3>
                   
-                  {/* 2 IMAGE LAYOUT: 1 column mobile, 2 columns desktop */}
+                  {/* 2 IMAGE LAYOUT */}
                   {project.gallery.length === 2 && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {project.gallery.map((img, idx) => (
-                        <div key={idx} className="relative aspect-video overflow-hidden rounded-xl border border-[#ADB9FF]/20">
+                        <div 
+                          key={idx} 
+                          className="relative aspect-video overflow-hidden rounded-xl border border-[#ADB9FF]/20 cursor-pointer"
+                          onClick={() => setSelectedImage(img)}
+                        >
                           <ImageWithFallback src={img} alt={`${project.title} gallery ${idx + 1}`} className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" />
                         </div>
                       ))}
                     </div>
                   )}
 
-                  {/* 3 IMAGE LAYOUT: 1 large on top, 2 small on bottom for desktop (stacked on mobile) */}
+                  {/* 3 IMAGE LAYOUT */}
                   {project.gallery.length === 3 && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {project.gallery.map((img, idx) => (
                         <div 
                           key={idx} 
-                          // The first image spans both columns on desktop!
-                          className={`relative aspect-video overflow-hidden rounded-xl border border-[#ADB9FF]/20 ${idx === 0 ? 'md:col-span-2' : ''}`}
+                          className={`relative aspect-video overflow-hidden rounded-xl border border-[#ADB9FF]/20 cursor-pointer ${idx === 0 ? 'md:col-span-2' : ''}`}
+                          onClick={() => setSelectedImage(img)}
                         >
                           <ImageWithFallback src={img} alt={`${project.title} gallery ${idx + 1}`} className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" />
                         </div>
@@ -224,11 +238,15 @@ export function ProjectDetail() {
                     </div>
                   )}
                   
-                  {/* Fallback for any other number of images (4, 5, etc) */}
+                  {/* Fallback for any other number of images */}
                   {project.gallery.length !== 2 && project.gallery.length !== 3 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {project.gallery.map((img, idx) => (
-                        <div key={idx} className="relative aspect-video overflow-hidden rounded-xl border border-[#ADB9FF]/20">
+                        <div 
+                          key={idx} 
+                          className="relative aspect-video overflow-hidden rounded-xl border border-[#ADB9FF]/20 cursor-pointer"
+                          onClick={() => setSelectedImage(img)}
+                        >
                           <ImageWithFallback src={img} alt={`${project.title} gallery ${idx + 1}`} className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" />
                         </div>
                       ))}
@@ -236,11 +254,10 @@ export function ProjectDetail() {
                   )}
                 </div>
               )}
-              {/* 👆 END OF GALLERY SECTION */}
 
             </div>
 
-            {/* Right Sidebar (Project Info, Technologies, Links) */}
+            {/* Right Sidebar */}
             <div className="space-y-8">
               <div className="rounded-xl border border-[#ADB9FF]/20 bg-[#171614] p-6 shadow-sm">
                 <h3 className="text-lg font-semibold mb-4 font-['Montserrat'] text-white">Project Info</h3>
@@ -299,6 +316,38 @@ export function ProjectDetail() {
           </div>
         </motion.div>
       </div>
+
+      {/* 👇 FULLSCREEN LIGHTBOX OVERLAY */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-8"
+            onClick={() => setSelectedImage(null)} // Clicking background closes it
+          >
+            <button
+              className="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors z-50"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="h-10 w-10" />
+            </button>
+            
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              src={selectedImage}
+              alt="Fullscreen gallery view"
+              className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()} // Prevents closing when clicking the image itself
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </article>
   );
 }
