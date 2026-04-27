@@ -21,7 +21,7 @@ const skills = [
   {
     category: "Creative Design",
     icon: PenTool,
-    items: ["Figma", "Photoshop", "Affinity", "Procreate", "Graphic Design", "Digital Art"],
+    items: ["Figma", "Photoshop", "Affinity", "Canva", "Procreate", "Graphic Design", "Digital Art"],
   },
   {
     category: "Core Strengths",

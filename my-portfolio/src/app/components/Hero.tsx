@@ -69,14 +69,17 @@ export function Hero() {
                 An International Media and Computing student at HTW Berlin and a passionate graphic designer. I combine structured computer science skills with my own creative touch to build dynamic and engaging digital experiences.
               </p>
             </div>
-
+            
             <div className="mt-8">
-              <a
-                href={`${import.meta.env.BASE_URL}resume.pdf`}
-                className="group inline-flex h-14 items-center justify-center rounded-full border border-[#ADB9FF]/20 bg-[#171614] px-8 text-lg font-medium font-['Montserrat'] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#5367df]/50 hover:bg-[#ADB9FF]/20 hover:shadow-xl"
-              >
-                Resume <DownloadIcon />
-              </a>
+            {/* 👇 Removed the 'download' attribute, kept target="_blank" */}
+            <a
+              href={`${import.meta.env.BASE_URL}Tran An Brandl CV.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex h-14 items-center justify-center rounded-full border border-[#ADB9FF]/20 bg-[#171614] px-8 text-lg font-medium font-['Montserrat'] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#5367df]/50 hover:bg-[#ADB9FF]/20 hover:shadow-xl"
+            >
+              Resume <DownloadIcon />
+            </a>
             </div>
           </motion.div>
 
